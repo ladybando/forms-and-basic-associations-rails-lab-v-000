@@ -16,7 +16,7 @@ class SongsController < ApplicationController
     @song.artist_name = artist_param[:artist_name]
     @song.genre_id = genre_param[:genre_id]
     note_params.each do |param|
-      Note.create(content: param, song: @song)
+    Note.create(content: param, song: @song)
     end
     if @song.save
       redirect_to @song
