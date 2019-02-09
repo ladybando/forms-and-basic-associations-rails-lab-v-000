@@ -13,7 +13,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-        @song.artist_name = artist_param[:artist_name]
+    @song.artist_name = artist_param[:artist_name]
     @song.genre_id = genre_param[:genre_id]
     note_params.each do |param|
       Note.create(content: param, song: @song)
